@@ -15,9 +15,12 @@ gradle.properties
 *.log
 *-data/
 xnat/plugins
+reports/*
 
 xnat/webapps
 
 *.env
 !default.env
+
+
 

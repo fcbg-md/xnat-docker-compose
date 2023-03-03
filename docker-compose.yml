@@ -62,3 +62,11 @@ services:
     links:
       - xnat-web
 
+  robot-framework:
+    build:
+      context: rf-build
+    user: "${UID}:${GID}"
+    volumes:
+      - ./reports:/opt/robotframework/reports:Z
+      - ./tests:/opt/robotframework/tests:Z
+
