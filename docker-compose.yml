@@ -1,6 +1,7 @@
 version: '3.7'
 services:
   xnat-web:
+    # image: fcbg/xnat-unige:1.8.8.24
     build:
       context: ./xnat
       args:
@@ -33,6 +34,10 @@ services:
     environment:
       - CATALINA_OPTS=-Xms${XNAT_MIN_HEAP} -Xmx${XNAT_MAX_HEAP} -Dxnat.home=${XNAT_HOME}
       - XNAT_HOME=${XNAT_HOME}
+      - XNAT_DATASOURCE_USERNAME=${XNAT_DATASOURCE_USERNAME}
+      - XNAT_DATASOURCE_PASSWORD=${XNAT_DATASOURCE_PASSWORD}
+      - XNAT_DATASOURCE_HOST=${XNAT_DATASOURCE_HOST}
+      - XNAT_DATASOURCE_NAME=${XNAT_DATASOURCE_NAME}
 
   xnat-db:
     image: postgres:${PG_VERSION}

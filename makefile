@@ -1,14 +1,17 @@
 #!/usr/bin/make
 SHELL = /bin/bash
 
-UID := $(shell id -u)
-GID := $(shell id -g)
+UID := $(id -u)
+GID := $(id -g)
 
 export UID
 export GID
 
 .PHONY: up down test reload clean help
 .DEFAULT_GOAL := help
+
+build: ## Re build XNAT
+	docker compose build
 
 up: ## Start xnat stack
 	docker compose up -d xnat-web xnat-db xnat-nginx
