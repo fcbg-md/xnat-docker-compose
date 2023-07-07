@@ -23,7 +23,7 @@ reload: ## Restart xnat container to reload the plugins
 	docker restart $$(docker ps | grep "web" | awk '{ print $$1 }')
 
 test: ## Run robot framework test suits
-	docker compose up -d robot-framework
+	docker compose down && make clean && docker compose -f docker-compose-robot.yml up --build --abort-on-container-exit
 
 clean: ## Clean robot framework reports
 	rm -f reports/*
