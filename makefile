@@ -14,7 +14,7 @@ build: ## Re build XNAT
 	docker compose build
 
 up: ## Start xnat stack
-	docker compose up -d xnat-web xnat-db xnat-nginx
+	docker compose up -d xnat-web xnat-db --force-recreate
 
 down: ## Terminate xnat stack containers (xnat, db, nginx)
 	docker compose down
