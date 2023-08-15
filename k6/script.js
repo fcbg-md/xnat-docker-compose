@@ -4,7 +4,7 @@ import { check } from 'k6';
 import { sleep } from 'k6';
 
 const username = 'admin';
-const password = 'admin';
+const password = '';
 const url = "https://xnat.pprod.md.campusbiotech.ch"
 // const password = 'admin';
 // const url = "https://localhost:8080"
