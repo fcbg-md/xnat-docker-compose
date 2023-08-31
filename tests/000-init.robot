@@ -28,7 +28,7 @@ Log in
     Submit Form
 
 Setup site parameters
-    Wait until page contains    Save All
+    Wait until page contains    Save All    01:05
 
     Submit Form
     Wait until page contains    Initial site configuration has been completed!
